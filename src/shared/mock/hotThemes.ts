@@ -1,0 +1,42 @@
+export const hotThemes = [
+  {
+    id: 1,
+    name: "양자 컴퓨터",
+    sentiment: "positive",
+    score: 88,
+    change: "+12%",
+    description: "양자 보안 통신 및 큐비트 기술 관련주",
+  },
+  {
+    id: 2,
+    name: "온디바이스 AI",
+    sentiment: "positive",
+    score: 76,
+    change: "+8%",
+    description: "NPU 및 엣지 디바이스 관련주",
+  },
+  {
+    id: 3,
+    name: "초전도체",
+    sentiment: "negative",
+    score: 32,
+    change: "-5%",
+    description: "LK-99 검증 이슈 관련",
+  },
+  {
+    id: 4,
+    name: "저PBR",
+    sentiment: "neutral",
+    score: 55,
+    change: "+2%",
+    description: "기업 밸류업 프로그램 수혜",
+  },
+  {
+    id: 5,
+    name: "자율주행",
+    sentiment: "positive",
+    score: 70,
+    change: "+5%",
+    description: "L4 자율주행 상용화 기대감",
+  },
+];

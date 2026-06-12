@@ -1,5 +1,4 @@
-import PostCard from "@/src/features/commuity/components/PostCard";
-import { communityPosts } from "@/src/shared/mock/communityPosts";
+import CommunityContent from "@/src/features/commuity/components/CommunityContent";
 import { Filter, Search } from "lucide-react";
 
 export default function CommunityPage() {
@@ -17,23 +16,7 @@ export default function CommunityPage() {
         </div>
       </div>
 
-      <div className="flex gap-2 mb-4">
-        <button className="flex-1 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold">
-          전체
-        </button>
-        <button className="flex-1 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg text-sm font-medium">
-          뉴스
-        </button>
-        <button className="flex-1 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg text-sm font-medium">
-          SNS
-        </button>
-      </div>
-
-      <div className="space-y-4">
-        {communityPosts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
+      <CommunityContent />
     </div>
   );
 }

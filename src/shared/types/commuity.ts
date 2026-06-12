@@ -11,4 +11,6 @@ export interface CommunityPost {
   type: PostCategory;
   likes: number;
   aiSummary: string;
+  isSpam?: boolean;
+  isFakeAlert?: boolean;
 }

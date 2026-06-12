@@ -1,6 +1,6 @@
 "use client";
 
-import { ThumbsUp, MessageCircle } from "lucide-react";
+import { ThumbsUp, MessageCircle, AlertTriangle, ShieldOff } from "lucide-react";
 import PostTypeBadge from "./PostTypeBadge";
 import { CommunityPost } from "@/src/shared/types/commuity";
 
@@ -11,6 +11,15 @@ interface PostCardProps {
 export default function PostCard({ post }: PostCardProps) {
   return (
     <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50">
+      {post.isFakeAlert && (
+        <div className="flex items-center gap-2 bg-red-50 border border-red-200 rounded-lg px-3 py-2 mb-3">
+          <AlertTriangle className="w-4 h-4 text-red-500 flex-shrink-0" />
+          <span className="text-xs font-bold text-red-600">
+            주의: 감성-거래량 괴리 발생 (신뢰도 낮음)
+          </span>
+        </div>
+      )}
+
       <div className="flex justify-between items-start mb-3">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">
@@ -25,10 +34,18 @@ export default function PostCard({ post }: PostCardProps) {
             </div>
           </div>
         </div>
-        <PostTypeBadge type={post.type} />
+        <div className="flex items-center gap-2">
+          {post.isSpam && (
+            <div className="flex items-center gap-1 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-xs font-bold text-slate-500">
+              <ShieldOff className="w-3 h-3" />
+              스팸
+            </div>
+          )}
+          <PostTypeBadge type={post.type} />
+        </div>
       </div>
 
-      <p className="text-slate-800 text-sm leading-relaxed mb-3 line-clamp-3">
+      <p className={`text-slate-800 text-sm leading-relaxed mb-3 line-clamp-3 ${post.isSpam ? "opacity-50" : ""}`}>
         {post.content}
       </p>
 
@@ -44,7 +61,9 @@ export default function PostCard({ post }: PostCardProps) {
         <div className="flex items-center gap-1">
           <span
             className={`text-xs font-bold ${
-              post.sentiment === "Positive" ? "text-green-600" : "text-red-600"
+              post.sentiment === "Positive" || post.sentiment === "Very Positive"
+                ? "text-green-600"
+                : "text-red-600"
             }`}
           >
             {post.sentiment}

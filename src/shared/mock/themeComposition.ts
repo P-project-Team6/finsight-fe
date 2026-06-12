@@ -2,27 +2,33 @@ import type { CompositionItem } from "@/src/features/themes/components/ThemePort
 
 export const themeComposition: CompositionItem[] = [
   {
-    name: "우리로",
+    name: "SK하이닉스",
+    score: 91,
+    status: "included",
+    reason: "HBM4 독점 공급 기대, 긍정 비율 91%",
+  },
+  {
+    name: "삼성전자",
+    score: 78,
+    status: "included",
+    reason: "파운드리 수주 회복세, 긍정 비율 78%",
+  },
+  {
+    name: "한미반도체",
     score: 82,
     status: "included",
-    reason: "긍정 비율 82% (기준 충족)",
+    reason: "TC본더 독점 공급 유지, 긍정 비율 82%",
   },
   {
-    name: "엑스게이트",
-    score: 75,
-    status: "included",
-    reason: "긍정 비율 75% (기준 충족)",
-  },
-  {
-    name: "텔레필드",
-    score: 42,
+    name: "DB하이텍",
+    score: 44,
     status: "excluded",
-    reason: "긍정 비율 42% (기준 미달)",
+    reason: "레거시 반도체 수요 부진, 긍정 비율 44%",
   },
   {
-    name: "케이씨에스",
-    score: 35,
+    name: "원익IPS",
+    score: 38,
     status: "excluded",
-    reason: "부정 여론 우세",
+    reason: "장비 발주 지연 우려, 부정 여론 우세",
   },
 ];

@@ -1,4 +1,6 @@
 import BackButton from "@/src/features/themes/components/BackButton";
+import BacktestCard from "@/src/features/themes/components/BacktestCard";
+import PredictionVote from "@/src/features/themes/components/PredictionVote";
 import ThemeCommunityFeed from "@/src/features/themes/components/ThemeCommunityFeed";
 import ThemePortfolioFilter from "@/src/features/themes/components/ThemePortfolioFilter";
 import { hotThemes } from "@/src/shared/mock/hotThemes";
@@ -37,10 +39,12 @@ export default async function ThemeDetailPage({
           </span>
         </div>
       </div>
+      <BacktestCard themeName={theme.name} />
       <ThemePortfolioFilter
         composition={themeComposition}
         themeName={theme.name}
       />
+      <PredictionVote themeName={theme.name} />
       <ThemeCommunityFeed />
     </div>
   );

@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-cyan-500/30">
           <Header />
-          <main className="pt-20 pb-20 max-w-md mx-auto px-4 min-h-screen">
+          <main className="pt-24 pb-20 max-w-md mx-auto px-4 min-h-screen">
             {children}
           </main>
           <BottomNav />

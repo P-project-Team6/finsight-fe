@@ -3,6 +3,7 @@ import MomentumFeed from "@/src/features/insight/components/MomentumFeed";
 import RecommendationList from "@/src/features/insight/components/RecommendationList";
 import SentimentGapDetector from "@/src/features/insight/components/SentimentGapDetector";
 import ThemePreviewCard from "@/src/features/insight/components/ThemePreviewCard";
+import WeeklyDigest from "@/src/features/insight/components/WeeklyDigest";
 
 export default function InsightPage() {
   return (
@@ -12,6 +13,7 @@ export default function InsightPage() {
       <RecommendationList />
       <SentimentGapDetector />
       <ThemePreviewCard />
+      <WeeklyDigest />
     </div>
   );
 }
